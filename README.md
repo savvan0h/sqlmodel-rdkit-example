@@ -75,7 +75,7 @@ FROM compoundstructure
 WHERE compoundstructure.molecule <@ mol_from_pkl(:molecule_1)
 ```
 
-## Similarity searches
+## Similarity search
 
 * Python
 

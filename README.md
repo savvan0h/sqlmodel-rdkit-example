@@ -3,7 +3,7 @@ This repo demonstrates how to integrate [SQLModel](https://sqlmodel.tiangolo.com
 You may want to check out an existing solution like [razi](https://github.com/rvianello/razi), but it requires some modifications to work with SQLModel at the time of writing, such as updating similarity search operators and result value processing.
 
 ## Requirements
-PostgreSQL with the RDKit extension, which is not included in this repo, must use the same version of RDKit as the one in the Python environment (See pyproject.toml).
+PostgreSQL with the RDKit extension, which is not included in this repo, must use the same version of RDKit as the one in the Python environment (See [pyproject.toml](pyproject.toml)).
 
 ## Exact structure search( `@=` )
 

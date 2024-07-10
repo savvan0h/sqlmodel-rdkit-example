@@ -1,0 +1,8 @@
+[project]
+name = "app"
+requires-python = ">=3.10"
+dependencies = [
+  "sqlmodel~=0.0.19",
+  "rdkit==2024.03.1"
+]
+version = "0.1.0"

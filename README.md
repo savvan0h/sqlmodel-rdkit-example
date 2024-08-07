@@ -5,6 +5,9 @@ You may want to check out an existing solution like [razi](https://github.com/rv
 ## Requirements
 PostgreSQL with the RDKit extension, which is not included in this repo, must use the same version of RDKit as the one in the Python environment (See [pyproject.toml](pyproject.toml)).
 
+> [!TIP]
+> Tested with [rvianello/postgres-rdkit](https://hub.docker.com/r/rvianello/postgres-rdkit):16.2-2024.03.1 image.
+
 ## Exact structure search( `@=` )
 
 * Python

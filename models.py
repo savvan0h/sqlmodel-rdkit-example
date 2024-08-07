@@ -123,6 +123,12 @@ class bfp_to_binary_text(GenericFunction):
     type = postgresql.BYTEA()
 
 
+class morganbv_fp(GenericFunction):
+    inherit_cache = True
+    name = "morganbv_fp"
+    type = Bfp()
+
+
 class Compound(SQLModel, table=True):
     id: int = Field(default=None, primary_key=True)
     name: str

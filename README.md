@@ -80,10 +80,10 @@ WHERE compoundstructure.molecule <@ mol_from_pkl(:molecule_1)
 * Python
 
 ```python
+from models import morganbv_fp
+
 smiles = "CCN1c2ccccc2Sc2ccccc21"
-mol = Chem.MolFromSmiles(smiles)
-fp = Chem.GetMorganGenerator(radius=2).GetFingerprint(mol)
-statement = select(Compound).where(Compound.mfp2.tanimoto_sml(fp))
+statement = select(Compound).where(Compound.mfp2.tanimoto_sml(morganbv_fp(smiles)))
 results = session.execute(statement)
 ```
 
@@ -95,7 +95,7 @@ SELECT compoundstructure.id,
        mol_to_pkl(compoundstructure.molecule) AS molecule,
        bfp_to_binary_text(compoundstructure.mfp2) AS mfp2
 FROM compoundstructure
-WHERE compoundstructure.mfp2 % bfp_from_binary_text(:mfp2_1)
+WHERE compoundstructure.mfp2 %% morganbv_fp(%(morganbv_fp_1)s::VARCHAR)
 ```
 
 ### Adjusting the similarity cutoff
